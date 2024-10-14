@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <move element="catalog.topnav" destination="header-wrapper" after="logo" /> -->
+        <referenceBlock name="header.panel" remove="true" /> 
+        <move element="container.name.subscribe" destination="footer-container" before="-"/> 
+        <referenceBlock name="header-wrapper">
+            <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav1" template="Magento_Theme::html/topmenu.phtml" ttl="3600" before="minicart"/>
+            <block class="Magento\Framework\View\Element\Template" name="example" after="-" template="Magento_Theme::headerDropdown.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/uitestlogo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">350</argument>
+                <argument name="logo_img_height" xsi:type="number">350</argument>
+            </arguments>
+        </referenceBlock>
+
+    </body>
+</page>
